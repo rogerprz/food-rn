@@ -1,11 +1,10 @@
 import { useEffect, useState } from 'react';
 import yelp from '../api/yelp';
 
-
 export default () => {
   const [results, setResults] = useState([]);
   const [errorMessage, setErrorMessage] = useState('');
-  
+
   const searchApi = async (searchTerm) => {
     console.log('searchApi', searchTerm);
     try {
@@ -17,12 +16,11 @@ export default () => {
         }
       });
       setResults(response.data.businesses);
-    
-    } catch(err){
+    } catch (err) {
       setErrorMessage('Something went wrong');
     }
-  }
-  useEffect(()=> searchApi('sushi'), []);
+  };
+  useEffect(() => searchApi('food'), []);
 
   return [searchApi, results, errorMessage];
-}
+};
