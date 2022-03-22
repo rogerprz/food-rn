@@ -18,9 +18,9 @@ const SearchScreen = ({ navigation }) => {
       <SearchBar term={term} onTermChange={setTerm} onTermSubmit={() => searchApi(term)} />
       {errorMessage ? <Text>{errorMessage}</Text> : null}
       <ScrollView>
-        <ResultsList title="Cost Effective" results={filterResultsByPrice('$')} navigation={navigation} />
-        <ResultsList title="Bit Pricier" results={filterResultsByPrice('$$')} navigation={navigation} />
-        <ResultsList title="Big Spender" results={filterResultsByPrice('$$$')} navigation={navigation} />
+        <ResultsList title="Cost Effective" results={filterResultsByPrice('$')} />
+        <ResultsList title="Bit Pricier" results={filterResultsByPrice('$$')} />
+        <ResultsList title="Big Spender" results={filterResultsByPrice('$$$')} />
       </ScrollView>
     </>
   );
